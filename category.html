@@ -1,0 +1,44 @@
+---
+layout: blogmain
+title: Live from the Silicon Valley by Peter Moskovits
+---
+
+<!-- BEGIN CONTENT
+================================================== -->
+
+<section id="blog" class="templateblog">
+<div class="container padtop60 padbot60">
+	<div class="row">
+		<!-- BEGIN MAIN -->
+		<div id="main" class="col-md-8">
+			<div class="blogtemplate">
+				{% for page in site.pages %}
+				 {% if page.page-type == "blogpost" %}
+				 	{% include site/article.html %}
+				 {% endif %}
+				{% endfor %}
+			</div>
+			<div class="clearfix">
+			</div>
+		</div>
+		<!-- END MAIN -->
+
+		<!-- BEGIN SIDEBAR -->
+		<div id="sidebar" class="col-md-4">
+			<div class="sidebar-inner">
+				<aside class="widget-area">
+					{% include site/search.html %}
+				  {% include site/post-updates.html %}
+				  <!-- { include site/recent-comments.html %} -->
+			    <!-- { include site/archives.html %} -->
+					{% include site/categories.html %}
+				</aside>
+			</div>
+		</div>
+		<!-- END SIDEBAR -->
+
+	</div>
+</div>
+</section>
+<!-- END CONTENT
+================================================== -->

@@ -1,0 +1,16 @@
+---
+---
+[
+  {% for page in site.pages %}
+    {% if page.page-type == "blogpost" %}
+      {
+        "title"    : "{{ page.title | escape }}",
+        "category" : "{% for category in page.categories %}{{category}} {% endfor %}",
+        "tags"     : "{{ page.tags | join: ', ' }}",
+        "url"      : "{{ site.baseurl }}{{ page.url }}",
+        "date"     : "{{ page.date }}",
+        "image"    : "{{ page.image }}"
+      } {% unless forloop.last %},{% endunless %}
+    {% endif %}
+  {% endfor %}
+]

@@ -1,0 +1,21 @@
+# Site settings
+title: "Peter Moskovits"
+email: peter.moskovits@gmail.com
+description: "Blog from the Silicon Valley"
+baseurl: ""
+url: http://pmoskovi.github.io
+highlighter: pygments
+
+production: true
+asseturl: "/pmoskovi.github.io"
+
+# Build settings
+markdown: redcarpet
+highlighter: pygments
+# permalink: pretty
+category-list: [book, websocket]
+#relative_permalinks: false
+
+redcarpet:
+  extensions: ["fenced_code_blocks"]
+  input: "GFM"

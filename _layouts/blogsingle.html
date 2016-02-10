@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include head.html %}
+<body>
+  {% include header.html %}
+  <!-- { include site/blogsingletop.html } -->
+
+  <section class="singlephp">
+  <div class="container padtop60 padbot60">
+  	<div class="row">
+
+  		<!-- BEGIN MAIN -->
+  		<div id="main" class="col-md-8">
+  			<article class="contentitem">
+  			<div class="contentphp">
+  				<div class="row">
+  					<div class="col-md-12">
+  						<header class="entry-header text-center">
+  						<h1 class="entry-title singlephptitle">{{ page.title }}</h1>
+  						<div class="entry-meta text-center uppercase">
+  							<span class="wowmetadate"><i class="fa fa-clock-o"></i>{{ page.createdate }}</span>
+  							<span class="wowmetaauthor"><i class="fa fa-user"></i> <a href="#">{{ page.author }}</a></span>
+  							<span class="wowmetacats"><i class="fa fa-folder-open"></i>	<a href="#" title="">category</a></span>
+  							<span class="wowmetacommentnumber"><i class="fa fa-comments"></i> <a href="#">Comments</a></span>
+  						</div>
+  						<!-- .entry-meta -->
+  						</header>
+  					</div>
+  				</div>
+  				<div class="clearfix">
+  				</div>
+          <div class="entry-content">
+            {{ content }}
+          </div>
+    <!-- .entry-footer -->
+
+    <nav class="navigation post-navigation" role="navigation">
+    <div class="nav-links clearfix">
+      <div class="nav-previous pull-left">
+        <a href="#" rel="previous">Some other post title <span class="meta-nav"></span></a>
+      </div>
+      <div class="nav-next pull-right">
+        <a href="#" rel="next">HTML Tags and Formatting <span class="meta-nav"></span></a>
+      </div>
+    </div>
+    <!-- .nav-links -->
+    </nav>
+
+    <!-- .navigation -->
+    <div class="clearfix">
+    </div>
+    <div id="comments" class="comments-area">
+      {% include site/disqus.html %}
+    </div>
+    <div class="clearfix">
+    </div>
+  </div>
+  </article>
+</div>
+<!-- END MAIN -->
+
+
+<!-- BEGIN SIDEBAR -->
+<div id="sidebar" class="col-md-4">
+  <div class="sidebar-inner">
+    <aside class="widget-area">
+      {% include site/search.html %}
+      {% include site/post-updates.html %}
+      <!-- { % include site/recent-comments.html % } -->
+      <!-- { % include site/archives.html % } -->
+      <!-- { % include site/categories.html % } -->
+    </aside>
+  </div>
+</div>
+<!-- END SIDEBAR -->
+
+</div>
+</div>
+</section>
+<!-- END CONTENT
+================================================== -->
+
+
+  {% include footer.html %}
+</body>
+</html>

@@ -1,0 +1,11 @@
+{% case include.lang %}
+{% when "java" %}Java
+{% when "javascript" %}JavaScript
+{% when "android" %}Android
+{% when "objectivec" %}Objective-C
+{% when "dotnet" %}.NET
+{% when "c" %}C/C++
+{% when "flash" %}Flash
+{% when "silverlight" %}Silverlight
+{% else %}{{ include.lang }}
+{% endcase %}

@@ -1,0 +1,38 @@
+<!-- article -->
+<article class="excerptitem">
+  <div class="excerptphp">
+    <header class="entry-header text-center">
+    <a href="{{page.url}}">
+    <h2 class="entry-title excerpt">{{page.title}}</h2>
+    </a>
+    <div class="entry-meta text-center uppercase">
+      <span class="wowmetadate"><i class="fa fa-clock-o"></i> {{page.createdate}}</span>
+      <span class="wowmetacommentnumber"><i class="fa fa-comments"></i> <a href="{{page.url}}">Leave a Comment</a></span>
+      <br/>
+      <span>
+      {% for category in page.categories %}
+        {{category}}
+        {% if forloop.last != true %}
+          |
+        {% endif %}
+      {% endfor %}
+      </span>
+    </div>
+    </header>
+    <div class="entry-thumbnail">
+      <img src="{{page.image}}" class="attachment-blogexcerpt" alt=""/>
+    </div>
+    <div class="entry-content">
+       {{page.excerpt}} <a href="{{page.url}}">[...]</a>
+    </div>
+    <div class="clearfix">
+    </div>
+    <div class="or-spacer">
+      <div class="mask">
+      </div>
+      <span><a href="{{page.url}}"><i class="fa fa-link"></i></a></span>
+    </div>
+    <div class="clearfix">
+    </div>
+  </div>
+</article>

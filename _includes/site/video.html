@@ -1,0 +1,64 @@
+<!-- SECTION videoback
+================================================== -->
+<section id="videoback">
+
+  <div class="videowrap" style="overflow:hidden; max-height:400px; margin-top:-30px;">
+
+    <div class="video-containeryt">
+      <div id="player" class="youtubevideobg">
+      </div>
+    </div>
+
+    <div class="videocontent">
+      <br/>
+      <div class="block2 text-center max80">
+        <h3 style="color:#ffffff;">
+        <span class="text1 wow bounceIn" data-wow-delay="0s" data-wow-duration="1s">
+          MultiPurpose Theme Suitable for any kind of business
+        </span>
+        </h3>
+        <h2 style="color:#ffffff;">
+        <span class="text2 wow zoomIn" data-wow-delay="0.4s" data-wow-duration="2s">
+          Build your website in no <span class="stresscolor">minute</span> with Zolix.<br>
+           Are you Ready to get online?
+        </span>
+        </h2>
+        <h4 style="color:#ffffff;">
+        <span class="text3 wow rotateIn" data-wow-delay="0.7s" data-wow-duration="1s">
+          Wow Themes.Net Development
+        </span>
+        </h4>
+      </div>
+    </div><!-- /.videocontent -->
+
+  </div><!-- /.videowrap -->
+
+  <script>
+    var tag = document.createElement('script');
+    tag.src = 'https://www.youtube.com/iframe_api';
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    var player;
+    function onYouTubeIframeAPIReady() {
+    player = new YT.Player('player', {
+      height: '100%',
+      width: '100%',
+      videoId: 'fQigKG_KHR0',
+      playerVars: { 'autoplay': 1, 'controls': 0, 'rel': 0, 'hd': 1, 'modestbranding': 1, 'loop': 1, 'showinfo':0, 'autohide': 1, 'disablekb': 1 },
+      events: {
+      'onReady': onPlayerReady,
+      onStateChange: function(e){
+        var id = 'fQigKG_KHR0';
+        if(e.data === YT.PlayerState.ENDED){
+          player.loadVideoById(id);
+        }
+      }
+      }
+    });
+    }
+    function onPlayerReady(event) {
+    event.target.playVideo();
+    }
+  </script>
+</section>
+

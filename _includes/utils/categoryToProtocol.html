@@ -1,0 +1,8 @@
+{% case include.prot %}
+{% when "websocket" %}WebSocket
+{% when "amqp091" %}AMQP0-9-1
+{% when "amqp10" %}AMQP1.0
+{% when "jms" %}JMS
+{% when "mqtt" %}MQTT
+{% else %}{{ include.prot }}
+{% endcase %}
