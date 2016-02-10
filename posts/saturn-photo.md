@@ -2,20 +2,20 @@
 layout: blogsingle
 page-type: blogpost
 title: The Day the Earth Smiled
-createdate: Jan 21, 2016
+createdate: Feb 10, 2016
 author: Peter Moskovits
 image: /img/saturn-thumb.jpg
-excerpt: The DragonBoard™ 410c is the first development board based on a Qualcomm® Snapdragon™ 400 series processor. It features advanced processing power, Wi-Fi, Bluetooth connectivity, and GPS, all packed into a board the size of a credit card.
+excerpt: On July 19, 2013, in an event celebrated the world over, NASA's Cassini spacecraft slipped into Saturn's shadow and turned to image the planet, seven of its moons, its inner rings -- and, in the background, our home planet, Earth.
 ---
 
 
 On July 19, 2013, in an event celebrated the world over, NASA's Cassini spacecraft slipped into Saturn's shadow and turned to image the planet, seven of its moons, its inner rings -- and, in the background, our home planet, Earth.
 
-<img src="/img/saturn-thumb.jpg">
+<img src="{{site.baseurl}}/img/saturn-thumb.jpg">
 
 With the sun's powerful and potentially damaging rays eclipsed by Saturn itself, Cassini's onboard cameras were able to take advantage of this unique viewing geometry. They acquired a panoramic mosaic of the Saturn system that allows scientists to see details in the rings and throughout the system as they are backlit by the sun. This mosaic is special as it marks the third time our home planet was imaged from the outer solar system; the second time it was imaged by Cassini from Saturn's orbit; and the first time ever that inhabitants of Earth were made aware in advance that their photo would be taken from such a great distance.
 
-<img src="/img/cassini.jpg">
+<img src="{{site.baseurl}}/img/cassini.jpg">
 
 With both Cassini's wide-angle and narrow-angle cameras aimed at Saturn, Cassini was able to capture 323 images in just over four hours. This final mosaic uses 141 of those wide-angle images. Images taken using the red, green and blue spectral filters of the wide-angle camera were combined and mosaicked together to create this natural-color view. A brightened version with contrast and color enhanced (Figure 1), a version with just the planets annotated (Figure 2), and an annotated version (Figure 3) are shown above.
 
