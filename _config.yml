@@ -2,7 +2,7 @@
 title: "Peter Moskovits"
 email: peter.moskovits@gmail.com
 description: "Blog from the Silicon Valley"
-baseurl: ""
+baseurl: "http://pmoskovi.github.io/pmoskovi"
 url: http://pmoskovi.github.io
 highlighter: pygments
 
