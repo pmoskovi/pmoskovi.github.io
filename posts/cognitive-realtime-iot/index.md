@@ -6,7 +6,7 @@ createdate: Mar 5, 2016
 author: Peter Moskovits
 image: /img/cognitive-realtime-iot.png
 excerpt: This example demonstrates how you can control physical devices through natural voice commands over the Web in real time. For the physical device I used a reading lamp, but as you'll see, it can be any electric device, really. In my simple scenario I control the lights in 4 rooms of a house. I use a Web app on my computer to give free form voice commands (it could be a mobile app just as easily). The voice command is then converted to text in the cloud by IBM's cognitive engine, Watson. After processing the text, I identify the action(s) that need(s) to be taken. The action is then submitted to control the lights, and is published to the monitoring clients for real-time monitoring.
-categories: [saturn, space]
+categories: [websocket, iot, cognitive, ai]
 ---
 
 <h1>Cognitive Real-Time IoT</h1>
@@ -154,7 +154,7 @@ var onWebSocketConnected = function () {
 
 The value of the other parameters looks as follows:
 
-```
+```javascript
 // WebSocket connection info
 var url = 'wss://sandbox.kaazing.net/amqp091';
 var username = 'guest';

@@ -10,12 +10,12 @@ production: true
 asseturl: "https://petermoskovits.com"
 
 # Build settings
-markdown: redcarpet
-highlighter: pygments
+# markdown: redcarpet
+# highlighter: pygments
 # permalink: pretty
-category-list: [book, websocket]
+category-list: [book, websocket, iot, cognitive, ai, saturn, space]
 #relative_permalinks: false
 
-redcarpet:
+kramdown:
   extensions: ["fenced_code_blocks"]
   input: "GFM"
