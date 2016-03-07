@@ -3,6 +3,7 @@ layout: blogsingle
 page-type: blogpost
 title: The Day the Earth Smiled
 createdate: Feb 10, 2016
+sortabledate: 20160210
 author: Peter Moskovits
 image: /img/saturn-thumb.jpg
 excerpt: On July 19, 2013, in an event celebrated the world over, NASA's Cassini spacecraft slipped into Saturn's shadow and turned to image the planet, seven of its moons, its inner rings -- and, in the background, our home planet, Earth.

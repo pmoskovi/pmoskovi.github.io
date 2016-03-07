@@ -3,6 +3,7 @@ layout: blogsingle
 page-type: blogpost
 title: The Definitive Guide to HTML5 WebSocket
 createdate: Feb 9, 2016
+sortabledate: 20160209
 author: Peter Moskovits
 image: /img/websocketbook.png
 excerpt: This is my book about WebSocket. The book provides an introduction to WebSocket, then describes the WebSocket API and Protocol and provides hands-on examples. We deep dive into three use cases for WebSocket, all using higher-level standard protocols (text and binary) over WebSocket. We walk through building a grown-up version of a chat application using XMPP/WS, a rock-paper-scissors game using pub-sub and STOMP/WS, and desktop sharing using RFB/WS (VNC). Finally, we examine security and deployment considerations.

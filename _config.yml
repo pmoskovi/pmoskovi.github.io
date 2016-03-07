@@ -4,7 +4,7 @@ email: peter.moskovits@gmail.com
 description: "Blog from the Silicon Valley"
 baseurl: ""
 url: http://pmoskovi.github.io
-highlighter: pygments
+highlighter: rouge
 
 production: true
 asseturl: "https://petermoskovits.com"

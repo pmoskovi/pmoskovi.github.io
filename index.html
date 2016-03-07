@@ -35,7 +35,8 @@ title: Live from the Silicon Valley by Peter Moskovits
 		<div id="main" class="col-md-8">
 			<div class="blogtemplate">
 
-				{% for page in site.pages %}
+				{% assign pages = site.pages | sort:"sortabledate" | reverse %}
+				{% for page in pages %}
 				 {% if page.page-type == "blogpost" %}
 				 	{% include site/article.html %}
 				 {% endif %}
