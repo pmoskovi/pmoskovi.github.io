@@ -7,7 +7,7 @@ url: http://pmoskovi.github.io
 highlighter: pygments
 
 production: true
-asseturl: "/pmoskovi.github.io"
+asseturl: "https://petermoskovits.com"
 
 # Build settings
 markdown: redcarpet

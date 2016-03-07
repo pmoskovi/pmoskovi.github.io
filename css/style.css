@@ -28,10 +28,6 @@ Author: http://www.wowthemes.net/premium-themes-templates/
 	background-color: #ddd;
 }
 
-.text-anchor {
-	color: #600;
-}
-
 html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video {
 	margin:0;
 	padding:0;
@@ -2237,4 +2233,19 @@ body {
 @media only screen and (max-width:600px) {
 .videowrap .videocontent, .videowrapsh .videocontent {height: 100%;}
 .owl-carousel {display: block !important;opacity: 1 !Important;}
+}
+
+pre {
+	background-color: #eee;
+	border-color: #999;
+	border-width: 1px;
+	border-style: solid;
+}
+
+.text-anchor {
+	color: #600;
+}
+
+a {
+	color: #369;
 }
