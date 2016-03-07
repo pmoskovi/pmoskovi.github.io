@@ -10,7 +10,7 @@ excerpt: This example demonstrates how you can control physical devices through 
 categories: [websocket, iot, cognitive, ai]
 ---
 
-<h1>Building a Cognitive Real-Time IoT Solution Like LEGO Blocks</h1>
+<h1>How I Built a Cool Cognitive Real-Time IoT Demo</h1>
 <h2>Voice Controlled Lights Over the Web</h2>
 <h3>Introduction</h3>
 
