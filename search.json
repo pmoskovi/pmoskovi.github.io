@@ -1,8 +1,8 @@
 ---
 ---
 [
-  {% for page in site.pages %}
-    {% if page.page-type == "blogpost" %}
+  {% assign pages = (site.pages | where:"page-type", "blogpost") %}
+  {% for page in pages %}
       {
         "title"    : "{{ page.title | escape }}",
         "category" : "{% for category in page.categories %}{{category}} {% endfor %}",
@@ -10,7 +10,6 @@
         "url"      : "{{ site.baseurl }}{{ page.url }}",
         "date"     : "{{ page.date }}",
         "image"    : "{{ page.image }}"
-      } {% unless forloop.last %},{% endunless %}
-    {% endif %}
+      } {% if forloop.last == false %},{% endif %}
   {% endfor %}
 ]
