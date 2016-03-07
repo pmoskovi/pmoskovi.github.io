@@ -10,7 +10,7 @@ excerpt: This example demonstrates how you can control physical devices through 
 categories: [websocket, iot, cognitive, ai]
 ---
 
-<h1>Cognitive Real-Time IoT</h1>
+<h1>How to Build Cognitive Real-Time IoT Solutions Like LEGOs</h1>
 <h2>Voice Controlled Lights Over the Web</h2>
 <h3>Introduction</h3>
 
@@ -39,6 +39,8 @@ When I press the "talk" button in the browser window, the red light comes on, in
 
 Once the action is figured out, the client recording the human voice publishes it both to the <a href="http://wemo.com">Belkin WeMo</a> device(s), and to the monitoring client(s). The former is performed in the form of HTTP REST calls through <a href="http://iftt.com">IFTTT</a>, the latter as WebSocket messages over AMQP pub/sub, using the cloud-hosted AMQP WebSocket server by <a href="Kaazing">http://kaazing.com</a>.
 
+**Note**: If we were building this for real, it would probably be the Node handling the monitoring-related messages. For this example, publishing from the client browser is just as good...
+
 Here's the complete diagram, this time with the real-time monitoring included as well:
 
 <img width="800" src="img/HomeIoTDiagram2.png">
@@ -46,7 +48,7 @@ Here's the complete diagram, this time with the real-time monitoring included as
 
 The WebSocket connections, marked as WSS on the diagrams above for WebSocket Secure, are long lasting full-duplex connections, supporting low-latency streaming of data.
 
-To learn more about how I integrated Watson Text-to-Speech, event-driven pub/sub communication over WebSocket, how I connected the Belkin WeMo light switch along with latency characteristics, <a href="http://petermoskovits.com/posts/cognitive-realtime-iot">check out my detailed blog post</a>.
+To see how straight-forward it is to integrate Watson Text-to-Speech, event-driven pub/sub communication over WebSocket, how you can connect the Belkin WeMo light switch along with latency characteristics, keep reading...
 
 <h2>Getting Hands-On</h2>
 <h3>Watson Speech-to-Text</h3>
