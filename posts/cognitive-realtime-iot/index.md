@@ -27,9 +27,10 @@ Let's cut to the chase and watch what it all looks like:
 
 <h3>Running the App</h3>
 If you want to try out the Web communications aspect of the app (and control my WeMo remotely), here are the URLs you'll need to use:
+
 1. Control page to give voice commands: <a href="https://homeiot.mybluemix.net/control.html">`https://homeiot.mybluemix.net/control.html`</a>
 2. Monitoring page to view the changes (the iPad in the video): <a href="https://homeiot.mybluemix.net/">`https://homeiot.mybluemix.net`</a>
-
+<br/>
 **Notes**: Be sure to use Chrome on the desktop to issue voice commands. Also, make sure you use `https` (not `http`) in the URLs. You find explanation to both of these further down in the article.
 
 <h2>Behind the Scenes</h2>
