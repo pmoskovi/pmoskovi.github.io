@@ -189,11 +189,11 @@ And here's how you define the triggers and their actions:
 
 The two URLs to trigger the action look like this:
 
-'''https://maker.ifttt.com/trigger/KitchenSwitchOff/with/key/<your key>'''
+```https://maker.ifttt.com/trigger/KitchenSwitchOff/with/key/<your key>```
 
 If you want to test it from the command line, here's the curl command for your convenience:
 
-'''curl -X POST https://maker.ifttt.com/trigger/KitchenSwitchOff/with/key/<your key>'''
+```curl -X POST https://maker.ifttt.com/trigger/KitchenSwitchOff/with/key/<your key>```
 
 
 To connect the Wemo Switch to IFTTT, you have to walk through the following steps:
