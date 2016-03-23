@@ -141,9 +141,9 @@ The communication between the controller browser and the monitoring browser take
 
 Kaazing hosts a freely available server that they call *sandbox*. The URL to access their service is: `wss://sandbox.kaazing.net/amqp091`. To try it out, take a look at the <a href="http://kaazing.org/demos/ampq091-messaging-javascript">JavaScript AMQP messaging example</a>.
 
-**Shameless plug**: If you want to learn more about the WebSocket technology, protocol layering, pub/sub and more, check out my book, <a href="http://petermoskovits.com/posts/websocket-book.html">The Definitive Guide to HTML5 WebSocket</a>.
+**Shameless plug**: If you want to learn more about the WebSocket technology, protocol layering, pub/sub and more, check out my book, <a href="http://petermoskovits.com/posts/websocket-book/">The Definitive Guide to HTML5 WebSocket</a>.
 
-<a href="http://petermoskovits.com/posts/websocket-book.html"><img width="200" src="img/websocketbook.png"></a>
+<a href="http://petermoskovits.com/posts/websocket-book/"><img width="200" src="img/websocketbook.png"></a>
 
 <h4>About the AMQP/WebSocket Code</h4>
 
@@ -189,11 +189,11 @@ And here's how you define the triggers and their actions:
 
 The two URLs to trigger the action look like this:
 
-'''https://maker.ifttt.com/trigger/KitchenSwitchOff/with/key/<your key>'''
+```https://maker.ifttt.com/trigger/KitchenSwitchOff/with/key/<your key>```
 
 If you want to test it from the command line, here's the curl command for your convenience:
 
-'''curl -X POST https://maker.ifttt.com/trigger/KitchenSwitchOff/with/key/<your key>'''
+```curl -X POST https://maker.ifttt.com/trigger/KitchenSwitchOff/with/key/<your key>```
 
 
 To connect the Wemo Switch to IFTTT, you have to walk through the following steps:
