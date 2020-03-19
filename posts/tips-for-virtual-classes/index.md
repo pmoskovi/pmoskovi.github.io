@@ -110,9 +110,13 @@ After installation, on desktop computers, you can go ahead and test your audio a
 
 <img style="border:1px solid gray" src="img/zoom-preferences.png">
 
-<h2>Running Zoom the very first time</h2>
 <h3>Allowing Zoom to access your computer's audio devices</h3>
 Right after installation, the first time you run Zoom (and most other video conferencing software), it will request you to grant access to your peripheries, such as your microphone, your built-in camera. Be sure you grant Zoom access to these, otherwise your video will not show, your sound will not be transmitted.
+
+<h3>Audio, video, screen sharing doesn't work</h3>
+Many first-time Zoom users on the Mac face the problem of <b>audio, video, screen sharing not working</b>. This all can be fixed by simply <a href="https://support.zoom.us/hc/en-us/articles/360016688031-Using-the-Zoom-Client-and-Zoom-Rooms-with-macOS">setting up the permissions for Zoom on your Mac</a>. (While this step may feel cumbersome, this is needed to protect you; that no program can listen to you through your microphone or watch you through your webcam - without your explicit permission.)
+
+<h2>Running Zoom the very first time</h2>
 
 <h3>Creating an easy to recognize personal meeting ID</h3>
 For every meeting Zoom generates a unique ID, a long, 10-digit number. It's not meant to be remembered. Also, just by looking at the number, you cannot tell whose meeting ID it is.
@@ -147,6 +151,16 @@ Zoom allows you to let your students join the call before you do. This is a feat
 
 <b>Pro Tip</b>: <i>Join before host</i> is a functionality you can control by logging in to the Zoom website (zoom.us > Sign In), and
 
+<h3>Gallery view</h3>
+Be sure you check out the Gallery view in Zoom, bringing all (very many) attendees together in a single view. This gives you a "classroom feel", by seeing everybody on the call.
+
+<img style="border:1px solid gray" src="img/50-participant-gallery-view-example.png">
+
+<h3>Spotlight video</h3>
+When attendees have their micropohe one, Zoom brings the person to the forefront, who spoke most recently. The <i>Spotlight video</i> feature allows the host to specify who should be shown to all attendees big, as the speaker.
+
+<b>Pro Tip</b>: In general, it's good practice to have all the microphones on mute - which is something becomes second nature to most attendees, and is something the host can control as well, by muting people.
+
 <h2>Accessing advanced Zoom features</h2>
 Zoom, like many other online tools offer a free version. It always makes sense to give the tool a spin before buying. However, if you want to be productive, it is highly recommended to get a paid license of Zoom; it will eliminate most of the limitations that you'll feel constrained by when using the free version. Two of the most important features that you get with the paid license: live interactive polls and no time limits on the sessions.
 
@@ -162,6 +176,22 @@ If used well, breakout rooms is an incredibly powerful capability. It has the po
 
 <b>Pro Tip</b>: You can visit your students in the breakout rooms - in fact I'd recommend you doing so. It brings back some of the warmth of <i>somebody is knocking on the door</i> feeling.
 
-<h3>White board</h3>
+<h3>Whiteboard</h3>
+The whiteboard feature will allow you to share a whiteboard that you and other participants (if allowed) can annotate on. To enable whiteboard, select Share Screen from the meeting toolbar.
+
+<img style="border:1px solid gray" src="img/share-screen-button.png">
+
+Then select Whiteboard.
+
+<img style="border:1px solid gray" src="img/whiteboard-icon.png">
+
+You can use the annotation tool and the page controls to manage the whiteboard.
+
+<b>Pro Tip</b>: You need paid Zoom license to use the Whiteboard.
 
 <h3>Polls</h3>
+Polling is one of my favorite features - it engages audiences like nothing else. It takes a few steps to enable and use polling - it's summed up very well in the <a href="https://support.zoom.us/hc/en-us/articles/213756303-Polling-for-Meetings">Zoom documentation</a>.
+
+<b>Pro Tip</b>: You need paid Zoom license to use the Whiteboard. If you don't have polling available to you, you can use third party tools (in combination with screen sharing). My favorite polling app is <a href="https://sli.do">sli.do</a>.
+
+<img style="border:1px solid gray" src="img/polling-launch-poll-button.png">
