@@ -1,7 +1,7 @@
 ---
 layout: blogsingle
 page-type: blogpost
-title: Tips for virtual classes
+title: Tips for teachers leading virtual classes (with Zoom)
 createdate: March 18, 2020
 sortabledate: 20200318
 author: Peter Moskovits
@@ -13,10 +13,9 @@ categories: [covid-19, virtual, learning, zoom]
 
 With COVID-19 upon us, bringing school closures and shelter in place orders, we all need to change gear and adjust to call of the times. Here I collected some of the best practices I learned first hand from running and participating in online sessions throughout the years.
 
-
-<!-- <img src="{{site.baseurl}}/img/saturn-thumb.jpg"> -->
-
 Since many of my friends decided to give Zoom a try, when it comes to screenshots and tool examples, that's what I'll use. Wherever I can, I try my best to call out other tools as well.
+
+While I provide basic introductory information on installation and setup, my assumption is that you had a chance to start playing around with Zoom, and have some first-hand experience with it. The more you use it the more comfortable you will be with it. If you get a chance try to test your ideas by recruiting buddies for your test runs; your peers, students, family and friends.
 
 <h2>Class preparation</h2>
 
@@ -162,5 +161,7 @@ Sharing video as part of your class brings a nice change for your class; I highl
 If used well, breakout rooms is an incredibly powerful capability. It has the power of bringing true interactivity and collaboration to your class. In my experience, breakout rooms with 3-4 students work really well. They're small enough that everybody can have their voice heard, and they're large enough that students don't feel lonely. It's also important how much time you give your students. In my experience 5 minute is the minimum meaningful time, and 12-15 mint is the longest I'd use. You can have Zoom assign students to the breakout rooms, or can
 
 <b>Pro Tip</b>: You can visit your students in the breakout rooms - in fact I'd recommend you doing so. It brings back some of the warmth of <i>somebody is knocking on the door</i> feeling.
+
+<h3>White board</h3>
 
 <h3>Polls</h3>
