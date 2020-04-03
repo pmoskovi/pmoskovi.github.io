@@ -783,7 +783,7 @@ hr.forh3 {
 		-moz-transition: .4s cubic-bezier(0.25,.46,.45,.94);
 	}
 	.navbar-fixed-top.tiny .navbar-nav>li>a,.navbar-fixed-top.tiny .navbar-brand {
-			line-height:60px;
+			line-height:90px;
 			transition: .4s cubic-bezier(0.15,.46,.45,.94);
 			-webkit-transition: .4s cubic-bezier(0.25,.46,.45,.94);
 			-moz-transition: .4s cubic-bezier(0.25,.46,.45,.94);
@@ -2096,7 +2096,7 @@ body {
 	body {
 		color: ;
 		font-weight:400;
-		font-size: 13px;
+		font-size: 18px;
 	}
 	.nav.navbar-nav {
 		font-family: "Open Sans";
