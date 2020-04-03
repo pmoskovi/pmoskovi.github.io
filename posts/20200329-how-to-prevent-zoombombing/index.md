@@ -7,7 +7,7 @@ sortabledate: 20200329
 author: Peter Moskovits
 image: /img/zoom-logo.png
 excerpt: Learn what options you have to control your Zoom meetings and prevent invited and uninvited attendees from ruining your meeting
-categories: [bees]
+categories: [zoom]
 ---
 
 With the increased popularity of <a href="https://zoom.us">Zoom</a>, it's more important than ever to ensure only those, who are invited can attend your meetings and classes. Here are the tools everybody has to be aware of to prevent "zoombombing".

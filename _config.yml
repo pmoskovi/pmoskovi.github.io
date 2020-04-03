@@ -14,7 +14,7 @@ asseturl: "https://petermoskovits.com"
 # markdown: redcarpet
 # highlighter: pygments
 # permalink: pretty
-category-list: [book, websocket, iot, cognitive, ai, saturn, space]
+category-list: [book, websocket, iot, cognitive, ai, saturn, space, zoom, virtual, learning, bees]
 #relative_permalinks: false
 
 kramdown:

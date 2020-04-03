@@ -1,0 +1,72 @@
+---
+layout: blogmain
+title: Live from the Silicon Valley by Peter Moskovits
+---
+
+<!-- BEGIN CONTENT
+================================================== -->
+<!-- begin parallax -->
+<section class="pageheaderpagephp parallax parallax-image dark-bg" style="background-color: #000000; background-image:url(img/saturn.jpg);">
+	<div class="wrapsection" style="padding:250px 0px; ">
+		<div class="overlay" style="background-color: #000000;">
+		</div>
+		<div class="container">
+			<div class="parallax-content">
+				<div class="title-area">
+					<h2 class="title wow slideInDown shadow" wow-data-duration="0.8s">Peter's Notes</h2>
+					<h3 class="subtitle wow zoomIn shadow" wow-data-duration="0.8s">
+						Observations, experiments, and more...
+					</h3>
+					<p class="wow shadow zoomIn">
+						<a href="posts/saturn-photo/" style="border-bottom: 1px dotted #fff;">More about this Saturn photo</a>
+					</p>
+					<a href="#blog" class="downarrowpoint wow zoomIn goscroll"><i class="fa fa-angle-double-down"></i></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- end parallax -->
+
+<section id="blog" class="templateblog">
+<div class="container padtop60 padbot60">
+	<div class="row">
+		<!-- BEGIN MAIN -->
+		<div id="main" class="col-md-8">
+			<div class="blogtemplate">
+
+{% for category in site.category-list %}
+  <h4>{{ category }}</h4>
+  {% for page in site.pages %}
+    {% if page.page-type == "blogpost" and page.categories contains category %}
+      <a href="{{page.url}}">{{page.title}}</a><br>
+    {% endif %}
+  {% endfor %}
+{% endfor %}
+
+
+			</div>
+			<div class="clearfix">
+			</div>
+		</div>
+		<!-- END MAIN -->
+
+		<!-- BEGIN SIDEBAR -->
+		<div id="sidebar" class="col-md-4">
+			<div class="sidebar-inner">
+				<aside class="widget-area">
+					{% include site/search.html %}
+				  {% include site/post-updates.html %}
+				  <!-- { include site/recent-comments.html %} -->
+			    <!-- { include site/archives.html %} -->
+					{% include site/categories.html %}
+				</aside>
+			</div>
+		</div>
+		<!-- END SIDEBAR -->
+
+	</div>
+</div>
+</section>
+<!-- END CONTENT
+================================================== -->
