@@ -16,7 +16,7 @@ Do bees find these flowers by simple chance, or do they have a way to share with
 <i>How do bees orient and find their way home?</i><br>
 
 These were the questions that gave sleepless nights to <a href="https://en.wikipedia.org/wiki/Karl_von_Frisch">Karl von Frisch</a>, an Austrian ethologist.
-His research in the 1920's earned Karl von Frisch a Nobel Prize, shared with his countryman, the ethologist <a href="https://en.wikipedia.org/wiki/Konrad_Lorenz">Konrad Lorenz</a>, and the Dutch <a href="https://en.wikipedia.org/wiki/Nikolaas_Tinbergen">Niko Tinbergen</a>.
+His research in the 1920's earned Von Frisch a Nobel Prize, shared with his countryman, the ethologist <a href="https://en.wikipedia.org/wiki/Konrad_Lorenz">Konrad Lorenz</a>, and the Dutch <a href="https://en.wikipedia.org/wiki/Nikolaas_Tinbergen">Niko Tinbergen</a>.
 
 <img src="img/Karl_von_Frisch.jpg">
 
