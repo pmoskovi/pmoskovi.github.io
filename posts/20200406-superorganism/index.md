@@ -5,7 +5,7 @@ title: Honeybee colony as a superorganism
 createdate: April 6, 2020
 sortabledate: 20200406
 author: Peter Moskovits
-image: /img/superorganism.png
+image: /img/super-organism.png
 excerpt: Learn how honeybees can function in an organized fashion analogous in some ways to the functioning of a single biological organism.
 categories: [bees, superorganism]
 ---
