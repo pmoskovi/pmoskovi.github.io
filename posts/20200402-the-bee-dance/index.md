@@ -20,6 +20,10 @@ His research in the 1920's earned Von Frisch a Nobel Prize, shared with his coun
 
 <img src="img/Karl_von_Frisch.jpg">
 
+For a video commentary and visual demonstration of the waggle dance, watch this video:
+
+<iframe width="720" height="405" src="https://www.youtube-nocookie.com/embed/76RvQf71r8Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 Von Frisch discovered that bees use the sun as their primary orientation tool. Not only do they use the sun to find their way home from as far as 5km (~3 miles) away, they also have a way to abstract and communicate directions relative to the sun using a special movement pattern, called the <i>waggle dance</i>.
 
 Frisch found that bees have the ability to communicate the location of rich forage with each other. Bees achieve this through a special sequence of movements, often referred to as a dance.
@@ -28,7 +32,7 @@ We differentiate between two major classes of dance types: the <i>round dance</i
 
 The <b>round dance</b> is used by the bees to describe that there's rich food source within the immediate vicinity of the hive, typically within 50-100 meters (or yards). The round dance is fairly simple: it manifests in a rapid succession of whirling around repeatedly in clockwise and counterclockwise directions.
 
-The <b>waggle dance</b> is significantly more sophisticated in nature. For resources that are further away, bees have to describe the <i>direction</i> and the <i>location</i>. In addition, the smell of the bee also gives away the <i>type of food</i>. And last, the <i>quality of the forage</i> is communicated through the vigor or intensity of the dance. Bees communicate the direction relative to the sun encoded in the angle of the waggle line of the dance relative to the vertical line (on the vertically hanging comb). The length of the waggle indicates the distance, where one second represents about 1km (0.6 miles) distance.
+The <b>waggle dance</b> is significantly more sophisticated in nature. For resources that are further away, bees have to describe the <i>direction</i> and the <i>distance</i>. In addition, the smell of the bee also gives away the <i>type of food</i>. And last, the <i>quality of the forage</i> is communicated through the vigor or intensity of the dance. Bees communicate the direction relative to the sun encoded in the angle of the waggle line of the dance relative to the vertical line (on the vertically hanging comb). The length of the waggle indicates the distance, where one second represents about 1km (0.6 miles) distance.
 
 <img src="img/waggle-dance.png">
 
