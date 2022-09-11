@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<html lang="en">
+	<head>
+		<!-- Meta, title -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Peter Moskovits' blog from the Silicon Valley.">
+		<meta name="keywords" content="HTML5, IoT, Internet of Things, WebSocket, real-time, arduino, raspberry pi, edison">
+		<meta name="author" content="Peter Moskovits">
+		<title>Cognitive Real-Time IoT</title>
+
+		<!-- Google Fonts -->
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:100,200,300,400,400italic,500,600,700,700,800,900italic&amp;subset=latin,greek-ext,cyrillic,latin-ext,greek,cyrillic-ext,vietnamese' rel='stylesheet' type='text/css'/>
+		<link href='http://fonts.googleapis.com/css?family=ABeeZee:100,200,300,400,400italic,500,600,700,700,800,900italic&amp;subset=latin,greek-ext,cyrillic,latin-ext,greek,cyrillic-ext,vietnamese' rel='stylesheet' type='text/css'/>
+
+		<!-- CSS -->
+		<link rel='stylesheet' href='/css/bootstrap.css' type='text/css'/>
+		<link rel='stylesheet' href='/css/shortcodes.css' type='text/css'/>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+		<link rel='stylesheet' href='/css/animate.css' type='text/css'/>
+		<link rel='stylesheet' href='/css/style.css' type='text/css'/>
+		<link rel='stylesheet' href='/css/skins/blue.css' type='text/css'/>
+		<link rel='stylesheet' href='/css/prettify.css' type='text/css'/>
+
+		<!-- Jquery -->
+		<script type='text/javascript' src='/js/jquery.js'></script>
+
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+		  <script src="js/html5shiv.min.js"></script>
+		  <script src="js/respond.min.js"></script>
+		<![endif]-->
+
+		<!-- Favicons -->
+		<link rel="icon" href="/img/favicon.ico">
+
+	</head>
+	<body>
+
+<body>
+  
+<!-- BEGIN MENU
+================================================== -->
+
+<div id="navigation" class="navbar navbar-default navbar-fixed-top">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="/index.html">
+				<div class="logo-container">
+					<span class="helper"></span><img src="/img/logo.png" alt=""/>
+				</div>
+			</a>
+			<a class="navbar-brand" href="index.html">
+			</a>
+		</div>
+
+		<div class="navbar-collapse collapse pull-right" id="mainMenu">
+			<ul id="menu-main-menu" class="nav navbar-nav">
+				<li><a href="/index.html">Home</a></li>
+				<li><a href="/posts/websocket-book/">My Book</a></li>
+				<li><a href="https://www.linkedin.com/in/petermoskovits">About</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<!-- END MENU
+================================================== -->
+
+  <!-- { include site/blogsingletop.html } -->
+
+  <section class="singlephp">
+  <div class="container padtop60 padbot60">
+  	<div class="row">
+
+  		<!-- BEGIN MAIN -->
+  		<div id="main" class="col-md-8">
+  			<article class="contentitem">
+  			<div class="contentphp">
+  				<div class="row">
+  					<div class="col-md-12">
+  						<header class="entry-header text-center">
+  						<h1 class="entry-title singlephptitle">Cognitive Real-Time IoT</h1>
+  						<div class="entry-meta text-center uppercase">
+  							<span class="wowmetadate"><i class="fa fa-clock-o"></i>Mar 5, 2016</span>
+  							<span class="wowmetaauthor"><i class="fa fa-user"></i> <a href="#">Peter Moskovits</a></span>
+  							<span class="wowmetacats"><i class="fa fa-folder-open"></i>	<a href="#" title="">category</a></span>
+  							<span class="wowmetacommentnumber"><i class="fa fa-comments"></i> <a href="#">Comments</a></span>
+  						</div>
+  						<!-- .entry-meta -->
+  						</header>
+  					</div>
+  				</div>
+  				<div class="clearfix">
+  				</div>
+          <div class="entry-content">
+            <h1>How I Built a Cool Cognitive Real-Time IoT Demo</h1>
+<h2>Voice Controlled Lights Over the Web</h2>
+<h3>Introduction</h3>
+
+<p><strong>Note</strong>: See source in <a href="https://github.com/pmoskovi/homeiot">github repo</a>.</p>
+
+<p>This example demonstrates how you can control physical devices through natural voice commands over the Web in real time. For the physical device I used a reading lamp, but as you’ll see, it can be any electric device, really.</p>
+
+<p>In my simple scenario I control the lights in 4 rooms of a house.
+I use a Web app on my computer to give free form voice commands (it could be a mobile app just as easily). The voice command is then converted to text in the cloud by IBM’s cognitive engine, Watson. After processing the text, I identify the action(s) that need(s) to be taken. The action is then submitted to control the lights, and is published to the monitoring clients for real-time monitoring.</p>
+
+<p>Let’s cut to the chase and watch what it all looks like:</p>
+
+<iframe width="700" height="380" src="https://www.youtube.com/embed/CaxVSgmtYtU" frameborder="0" allowfullscreen=""></iframe>
+
+<h3>Running the App</h3>
+<p>If you want to try out the Web communications aspect of the app (and control my WeMo remotely), here are the URLs you’ll need to use:</p>
+
+<ol>
+  <li>Control page to give voice commands: <a href="https://homeiot.mybluemix.net/control.html"><code class="highlighter-rouge">https://homeiot.mybluemix.net/control.html</code></a></li>
+  <li>Monitoring page to view the changes (the iPad in the video): <a href="https://homeiot.mybluemix.net/"><code class="highlighter-rouge">https://homeiot.mybluemix.net</code></a>
+<br />
+<strong>Notes</strong>: Be sure to use Chrome on the desktop to issue voice commands. Also, make sure you use <code class="highlighter-rouge">https</code> (not <code class="highlighter-rouge">http</code>) in the URLs. You find explanation to both of these further down in the article.</li>
+</ol>
+
+<h2>Behind the Scenes</h2>
+
+<p>To make this demonstration happen, I used the <a href="https://www.ibm.com/smarterplanet/us/en/ibmwatson/developercloud/speech-to-text.html">IBM Watson speech-to-text Bluemix service</a>, <a href="http://kaazing.com">AMQP over WebSocket from Kaazing</a> for event-driven real-time monitoring, and the <a href="http://www.belkin.com/us/p/P-F7C027/">Belkin WeMo Switch</a> in conjunction with <a href="http://ifttt.com">IFTTT</a> for controlling the switch remotely.</p>
+
+<p>Here’s the high-level overview of most of the moving pieces (without monitoring):</p>
+
+<p><img width="800" src="img/HomeIoTDiagram1.png" /></p>
+
+<p>When I press the “talk” button in the browser window, the red light comes on, indicating that recording is in progress. The voice data is streamed over a WebSocket connection to the <a href="https://www.ibm.com/smarterplanet/us/en/ibmwatson/developercloud/speech-to-text.html">IBM Bluemix Watson speech-to-text service</a>, and the resulting string is returned to the browser, displayed under the red light.</p>
+
+<p><img width="600" src="img/speech.png" /></p>
+
+<p>Once the action is figured out, the client recording the human voice publishes it both to the <a href="http://wemo.com">Belkin WeMo</a> device(s), and to the monitoring client(s). The former is performed in the form of HTTP REST calls through <a href="http://iftt.com">IFTTT</a>, the latter as WebSocket messages over AMQP pub/sub, using the cloud-hosted AMQP WebSocket server by <a href="Kaazing">http://kaazing.com</a>.</p>
+
+<p><strong>Note</strong>: If we were building this for real, it would probably be the Node handling the monitoring-related messages. For this example, publishing from the client browser is just as good…</p>
+
+<p>Here’s the complete diagram, this time with the real-time monitoring included as well:</p>
+
+<p><img width="800" src="img/HomeIoTDiagram2.png" /></p>
+
+<p>The WebSocket connections, marked as WSS on the diagrams above for WebSocket Secure, are long lasting full-duplex connections, supporting low-latency streaming of data.</p>
+
+<p>To see how straight-forward it is to integrate Watson Text-to-Speech, event-driven pub/sub communication over WebSocket, how you can connect the Belkin WeMo light switch along with latency characteristics, keep reading…</p>
+
+<h2>Getting Hands-On</h2>
+<h3>Watson Speech-to-Text</h3>
+
+<p><strong>Note</strong>: See source in <a href="https://github.com/pmoskovi/homeiot">github repo</a>.</p>
+
+<p>To run this demo, you have to acquire Bluemix service credentials for the <a href="https://www.ibm.com/smarterplanet/us/en/ibmwatson/developercloud/speech-to-text.html">Watson Speech2Text service</a>. To do so, sign in to (or sign up for) Bluemix (free trial account), locate the Watson Speech2Text service, and select Add Credentials.</p>
+
+<p><img src="img/BluemixWatsonSpeech2TextCredentials.png" /></p>
+
+<p>The best way to learn more about the Watson Speech-to-Text service is by checking out this <a href="https://speech-to-text-demo.mybluemix.net/">pretty incredible demo</a>.</p>
+
+<p>This demo is based on the <a href="https://github.com/watson-developer-cloud/speech-javascript-sdk">Watson Javascript Speech SDK</a>.</p>
+
+<p>Here’s the snippet from the node code responsible for getting a hold of the Bluemix credentials through the environment variables, needed for the JavaScript client to stream the sound to Watson for processing.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (!process.env.WATSON_BLUEMIX_UN) {
+  console.log ('Environment variable WATSON_BLUEMIX_UN is undefined.');
+  console.log ('If you don\'t have one, sign up for an account on http://bluemix.net.');
+} else
+if (!process.env.WATSON_BLUEMIX_PW) {
+  console.log ('Environment variable WATSON_BLUEMIX_PW is undefined.');
+  console.log ('If you don\'t have one, sign up for an account on http://bluemix.net.');
+} else
+{
+  // For local development, replace username and password
+  var config = extend({
+      version: 'v1',
+      url: 'https://stream.watsonplatform.net/speech-to-text/api',
+      // Be sure to set environment variables before running node server
+      // E.g.: export WATSON_BLUEMIX_UN=joe
+      username: process.env.WATSON_BLUEMIX_UN,
+      password: process.env.WATSON_BLUEMIX_PW,
+  }, vcapServices.getCredentials('speech_to_text'));
+</code></pre></div></div>
+
+<p>And this is the JavaScript code running in the browser, leveraging the <a href="https://github.com/watson-developer-cloud/speech-javascript-sdk">Watson Javascript Speech SDK</a>:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var recordSpeech = function() {
+  $.get('/token').then(function (token) {
+    stream = WatsonSpeechToText.stream({
+        token: token
+    });
+    redlight.src="img/redlighton.png";
+
+    // each result (sentence) gets it's own &lt;span&gt; because Watson will sometimes go back and change a word as it hears more context
+    // var $curSentence = $('&lt;span&gt;&amp;nbsp;&lt;/span&gt;').appendTo($output);
+    var curSentence='';
+    // a result is approximately equivalent to a sentence
+    stream.on('result', function(result) {
+        // update the text for the current sentence with the default alternative.
+        // there may be multiple alternatives but this example app ignores all but the first.
+        curSentence = result.alternatives[0].transcript;
+        $('#watsonText').text(curSentence);
+        if (result.final) {
+          // if we have the final text for that sentence, start a new one
+          processText(curSentence);
+          redrawHouse(canvas, context);
+          sendMessage();
+          consoleLog ("Final sentence: " + curSentence);
+        }
+    });
+
+    stream.on('error', function(err) {
+        consoleLog(err);
+    });
+
+  });
+};
+</code></pre></div></div>
+
+<h3>Event-driven Real-time Communication Using AMQP Pub/Sub Over WebSocket</h3>
+
+<p>The communication between the controller browser and the monitoring browser takes place through a permanent WebSocket connection. For this experiment, I used <a href="https://github.com/kaazing/universal-client">Kaazing’s universal client</a>, and selected AMQP 0-9-1 as the pub/sub protocol on top. The beauty of Kaazing is that you can use pub/sub over the web as if you were behind the enterprise firewall. Kaazing takes the web out of your way.</p>
+
+<p><strong>Note:</strong> The two APIs/protocols Kaazing currently offers as part of their universal client implementation is AMQP and JMS. I picked AMQP, as Kaazing hosts a publicly available pretty much unlimited AMQP service for general consumption (but not a JMS one).</p>
+
+<p><img width="600" src="img/KaazingUniversalClients.png" /></p>
+
+<p>Kaazing hosts a freely available server that they call <em>sandbox</em>. The URL to access their service is: <code class="highlighter-rouge">wss://sandbox.kaazing.net/amqp091</code>. To try it out, take a look at the <a href="http://kaazing.org/demos/ampq091-messaging-javascript">JavaScript AMQP messaging example</a>.</p>
+
+<p><strong>Shameless plug</strong>: If you want to learn more about the WebSocket technology, protocol layering, pub/sub and more, check out my book, <a href="http://petermoskovits.com/posts/websocket-book/">The Definitive Guide to HTML5 WebSocket</a>.</p>
+
+<p><a href="http://petermoskovits.com/posts/websocket-book/"><img width="200" src="img/websocketbook.png" /></a></p>
+
+<h4>About the AMQP/WebSocket Code</h4>
+
+<p>Let’s take a brief look at how the event-driven communication takes place between the browser clients.
+Upon successful loading of the HTML document, the browser connects to the WebSocket server:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>client.connect(url, username, password, topicP, topicS, noLocal, handleMessage, handleWebSocketError, logWebSocketMessage, onWebSocketConnected);
+</code></pre></div></div>
+
+<p>The last four parameters in the above <code class="highlighter-rouge">client.connect()</code> are callback functions invoked when a new message arrives, an error occurs, logging is needed, and the WebSocket connection has been established, respectively.</p>
+
+<p>As an example, here’s what <code class="highlighter-rouge">onWebSocketConnected()</code> looks like. It initializes the</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var onWebSocketConnected = function () {
+  initHome();
+};
+</code></pre></div></div>
+
+<p>The value of the other parameters looks as follows:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// WebSocket connection info</span>
+<span class="kd">var</span> <span class="nx">url</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">wss://sandbox.kaazing.net/amqp091</span><span class="dl">'</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">username</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">guest</span><span class="dl">'</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">password</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">guest</span><span class="dl">'</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">topicP</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">demo_exchange</span><span class="dl">'</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">topicS</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">demo_exchange</span><span class="dl">'</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">noLocal</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">UniversalClientDef</span><span class="p">(</span><span class="dl">'</span><span class="s1">amqp</span><span class="dl">'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>To send messages, the <code class="highlighter-rouge">client.sendMessage(msg)</code> function has to be invoked. The purpose of this call is to inform all the interested (monitoring) clients about the latest state of the lights in our home.</p>
+
+<h3>Controlling Light with WeMo &amp; IFTTT</h3>
+
+<p>To control the light by switching it on and off, you can use IFTTT. They provide a long list of triggering actions. The Maker channel being the most exciting, allowing you to invoke simple REST calls. Here are the two recipes I use for the kitchen light in this demo:
+<img src="img/ifttt.png" /></p>
+
+<p>And here’s how you define the triggers and their actions:
+<img src="img/iftttMakerChannel.png" style="border:1px solid lightgray;" /></p>
+
+<p>The two URLs to trigger the action look like this:</p>
+
+<p><code class="highlighter-rouge">https://maker.ifttt.com/trigger/KitchenSwitchOff/with/key/&lt;your key&gt;</code></p>
+
+<p>If you want to test it from the command line, here’s the curl command for your convenience:</p>
+
+<p><code class="highlighter-rouge">curl -X POST https://maker.ifttt.com/trigger/KitchenSwitchOff/with/key/&lt;your key&gt;</code></p>
+
+<p>To connect the Wemo Switch to IFTTT, you have to walk through the following steps:</p>
+
+<ol>
+  <li>
+    <p><strong>Choose Trigger Channel</strong>: select Maker. The Maker channel allows you to use an HTTP/REST call to trigger the switch event.
+<br />
+<img width="600" src="img/ifttt-wemo1.png" style="border:1px solid lightgray;" /></p>
+  </li>
+  <li>
+    <p><strong>Choose a Trigger</strong>: As we picked Maker in Step 1., here the only option available to us is <strong>Receive a web request</strong>.
+<br />
+<img width="600" src="img/ifttt-wemo2.png" style="border:1px solid lightgray;" /></p>
+  </li>
+  <li>
+    <p><strong>Complete Trigger Fields</strong>: Here we have to provide a name for the event. For us it makes sense to include the name of the room, and whether we switch the light On or Off. For example: KitchenSwitchOn
+<br />
+<img width="600" src="img/ifttt-wemo3.png" style="border:1px solid lightgray;" /></p>
+  </li>
+  <li>
+    <p><strong>Choose Action Channel</strong>: We got to the triggered event part. Here, by searching for <em>wemo</em>, you get to see all the Belkin WeMo devices. I use the WeMo Switch, highlighted in the picture.
+<br />
+<img width="600" src="img/ifttt-wemo4.png" style="border:1px solid lightgray;" /></p>
+  </li>
+  <li>
+    <p><strong>Choose an Action</strong>: For the WeMo Switch there are 5 actions to choose from: turn on, turn off, turn on then off, turn off then on, and toggle on/off. As we’ll send explicit on/off messages to our device, we select <em>Turn on</em> for the KitchenSwitchOn event.
+<br />
+<img width="600" src="img/ifttt-wemo5.png" style="border:1px solid lightgray;" /></p>
+  </li>
+  <li>
+    <p><strong>Complete Action Fields</strong>: In this step we have to select which switch we want to activate. I named my switch <em>Peter Kitchen</em>.
+<br />
+<img width="600" src="img/ifttt-wemo6.png" style="border:1px solid lightgray;" /></p>
+  </li>
+  <li>
+    <p><strong>Create and connect</strong>: Confirm the title of the recipe, and click <em>Create Recipe</em>.
+<br />
+<img width="600" src="img/ifttt-wemo7.png" style="border:1px solid lightgray;" /></p>
+  </li>
+</ol>
+
+<h4>Connecting the IFTTT Maker Channel with a REST Call</h4>
+<p>During the creation of the IFTTT recipe, IFTTT doesn’t give you the URL you need to invoke to trigger the action. To get the URL, point your browser to <code class="highlighter-rouge">https://ifttt.com/maker</code>.</p>
+
+<h4>The latency of controlling the WeMo Switch</h4>
+<p>As you can see in the recording above, the monitoring dashboard and the control screen keep in sync with amazing accuracy. Kaazing made their name in the industry by providing virtually unlimited horizontal scale, while keeping the latency to an absolute minimum.</p>
+
+<p>When it comes to controlling the light, the picture is a quite different.</p>
+
+<p>From a network connectivity perspective there are 3 ways to control your WeMo Switch. The method you use affect the latency big time.</p>
+
+<ul>
+  <li><em><strong>WeMo mobile app</strong>, while <strong>on the same LAN/WiFi</strong></em>: The latency is not noticeable, it feels real-time. My feel is that it’s in the 100-200ms range.</li>
+  <li><em><strong>WeMo mobile app</strong>, remotely <strong>through the public Web/cloud</strong></em>: For this test I connected my phone through a different WiFi. The control request goes out to the Belkin cloud first, and then comes back into the house. The latency is in the ballpark of 1-2 seconds.</li>
+  <li><em><strong>REST call</strong>, through <strong>IFTTT Maker Channel</strong></em>: When invoking the URLs above, the latency is in the 5-10 second range. It’s hard to tell whether the latency is introduced on the Belkin side or by IFTTT, but it’s very noticeable. This is the one you see in the video above.</li>
+</ul>
+
+<h4>Miscellaneous</h4>
+
+<h5>Resetting the WeMo Switch to Factory Defaults</h5>
+<p>As I was playing with the router settings of the WeMo Switch, it turned out the biggest challenge was resetting it to factory defaults. The instructions are talking about the reset button, but it took me a looong time to realize that the reset button is well hidden on the top (or bottom, depending on how your 110V socket is installed) of the device.</p>
+
+<p>Even after a successful reset, connecting to the WiFi router has been a painful (and repetitive) experience. Users are complaining about it in the forums quite a bit.</p>
+
+<h5>Personal Hotspot as the WiFi router for WeMo</h5>
+<p>Also, I tried it hard, really hard, to get the WeMo to connect to my iPhone’s Personal Hotspot WiFi, but no luck. Since I use the WeMo quite a bit on the go while I do demos, I ended up connecting it to my (T-)mobile hotspot.</p>
+
+<h2 id="docker-commands">Docker commands</h2>
+
+<p>As part of this exercise, I’ve deployed the node code to Docker as a microservice as well. Here are the commands. The username and password are set as environment variables, and picked up by the docker run command:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$&gt; docker run -p 8001:3001 -e "WATSON_BLUEMIX_UN=&lt;your_un&gt;" -e "WATSON_BLUEMIX_PW=&lt;your_pw&gt;"  pmoskovi/homeiot
+</code></pre></div></div>
+
+<p>E.g.:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$&gt; docker run -p 8001:3001 -e "WATSON_BLUEMIX_UN=9b6f1d7f-93fd-4901-8178-c02fc1b52083" -e "WATSON_BLUEMIX_PW=CsNg1PiQzz0x"  pmoskovi/homeiot
+</code></pre></div></div>
+<p>Be sure to use the <em>IP address assigned to your VirtualBox VM</em>, the <em>port</em> specified above (8001 in our example), as well as <em>https</em> as the protocol in the address bar.</p>
+
+<p>If you’re not sure what your IP address is, run the following command:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$&gt; docker-machine ip default
+192.168.99.100
+</code></pre></div></div>
+<p><strong>https://192.168.99.100:8001</strong></p>
+
+<p>The command that was used to build the Docker image:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$&gt; docker build -t pmoskovi/homeiot .
+</code></pre></div></div>
+
+<p><strong>Technologies used:</strong></p>
+
+<ul>
+  <li><a href="https://console.ng.bluemix.net/catalog/services/speech-to-text">IBM Watson speech-to-text Bluemix service</a></li>
+  <li>Kaazing</li>
+  <li><a href="http://kaazing.org/blog/public-websocket-sandbox/">WebSocket cloud service - AMQP</a></li>
+  <li><a href="https://github.com/kaazing/universal-client">Kaazing WebSocket Gateway Unified Client</a> - AMQP 0-9-1: for real-time pub/sub communication over WebSocket</li>
+  <li><a href="http://www.belkin.com/us/p/P-F7C027/">Belkin WeMo Switch</a></li>
+  <li><a href="http://ifttt.com/">IFTTT - If This Than That</a></li>
+  <li>Node.js</li>
+  <li>Docker</li>
+</ul>
+
+<h2>Technical Challenges Along the Way</h2>
+<h3>Microphone Access</h3>
+<p>I wanted to make this example as generic as possible, so the client controlling the light, as well as the monitoring experience are all Web clients. As a result of (or despite) it, I ran into a handful of challenges along the way.</p>
+
+<h4>No Access to Microphone from Mobile Safari</h4>
+<p><a href="http://mobilehtml5.org/">Safari on iOS</a> doesn’t support <code class="highlighter-rouge">getUserMedia()</code>, thus HTML5 apps have no access to the microphone. The part of the demo requiring microphone has to be run from a desktop browser, e.g. Chrome.</p>
+
+<h4>Google Chrome Microphone Access over HTTPS only</h4>
+<p><a href="https://developers.google.com/web/updates/2015/10/chrome-47-webrtc?hl=en">As of Chrome 47</a>, <code class="highlighter-rouge">getUserMedia()</code> requests are only allowed from secure origins: HTTPS or localhost. Therefore, for this demonstration to work, we use a self-signed certificate, located in the <code class="highlighter-rouge">/keys</code> directory. As a result, in Chrome, you’ll have to step through the certificate-related warnings. Warnings like this are reason for caution when seen out there in the wild west, but here it simply indicates that the certificate wasn’t signed by one of the certificate authorities known to the browser:</p>
+
+<p><img width="600" src="img/chromeSelfSignedCert.png" /></p>
+
+          </div>
+    <!-- .entry-footer -->
+
+    <nav class="navigation post-navigation" role="navigation">
+    <div class="nav-links clearfix">
+      <div class="nav-previous pull-left">
+        <a href="#" rel="previous">Some other post title <span class="meta-nav"></span></a>
+      </div>
+      <div class="nav-next pull-right">
+        <a href="#" rel="next">HTML Tags and Formatting <span class="meta-nav"></span></a>
+      </div>
+    </div>
+    <!-- .nav-links -->
+    </nav>
+
+    <!-- .navigation -->
+    <div class="clearfix">
+    </div>
+    <div id="comments" class="comments-area">
+      <div id="disqus_thread"></div>
+<script>
+/**
+* RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+* LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+
+s.src = '//pmoskovi.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+    </div>
+    <div class="clearfix">
+    </div>
+  </div>
+  </article>
+</div>
+<!-- END MAIN -->
+
+
+<!-- BEGIN SIDEBAR -->
+<div id="sidebar" class="col-md-4">
+  <div class="sidebar-inner">
+    <aside class="widget-area">
+      <!-- search -->
+<!-- <aside id="search-2" class="widget widget_search">
+<form id="search" method="get" action="#">
+  <input type="text" name="s" id="#" placeholder="Type and hit enter..." value="" class="form-control">
+</form>
+</aside> -->
+
+<!-- Html Elements for Search -->
+<aside id="search-2" class="widget widget_search">
+  <div id="search-container" class="widget widget-search">
+    <input type="text" id="search-input" placeholder="Search...">
+    <div id="results-container" class="search-results"></div>
+  </div>
+</aside>
+
+<!-- Script pointing to jekyll-search.js -->
+<script src="/js/jekyll-search.min.js"></script>
+
+<script type="text/javascript">
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/search.json',
+    searchResultTemplate: '<div class="PostWrap"><div style="width:72px;float:left;"><a href="{url}"><img src="{image}" class="attachment-post-thumbnail" alt=""></a></div><p class="postwidgettitle" style="font-weight:700;">&nbsp;<a href="{url}">{title}</a></p></div>',
+    noResultsText: 'No results found',
+    limit: 10,
+    fuzzy: false,
+    exclude: ['Welcome']
+  })
+</script>
+
+      <!-- post updates -->
+<aside id="postwidget-2" class="widget widget_postwidget">
+  <h2 class="widget-title">Recent Posts</h2>
+
+  
+  
+   
+   <div class="PostWrap">
+     <div style="width:72px;float:left; margin-right:10px;">
+       <a href="/posts/20200421-swarm/"><img src="/img/swarm-thumb.jpg" class="attachment-post-thumbnail" alt=""/></a>
+     </div>
+     <p class="postwidgettitle" style="font-weight:700;">
+       <a href="/posts/20200421-swarm/">The Inner Workings of Honeybee Swarms - A First-hand experience</a>
+     </p>
+     <p class="postwidgetinfo">
+       April 21, 2020
+     </p>
+   </div>
+   
+  
+   
+   <div class="PostWrap">
+     <div style="width:72px;float:left; margin-right:10px;">
+       <a href="/posts/20200406-superorganism/"><img src="/img/super-organism.png" class="attachment-post-thumbnail" alt=""/></a>
+     </div>
+     <p class="postwidgettitle" style="font-weight:700;">
+       <a href="/posts/20200406-superorganism/">Honeybee colony as a superorganism</a>
+     </p>
+     <p class="postwidgetinfo">
+       April 6, 2020
+     </p>
+   </div>
+   
+  
+   
+   <div class="PostWrap">
+     <div style="width:72px;float:left; margin-right:10px;">
+       <a href="/posts/20200402-the-bee-dance/"><img src="/img/waggle-dance-logo.png" class="attachment-post-thumbnail" alt=""/></a>
+     </div>
+     <p class="postwidgettitle" style="font-weight:700;">
+       <a href="/posts/20200402-the-bee-dance/">The bee dance - How do bees communicate?</a>
+     </p>
+     <p class="postwidgetinfo">
+       April 2, 2020
+     </p>
+   </div>
+   
+  
+   
+   <div class="PostWrap">
+     <div style="width:72px;float:left; margin-right:10px;">
+       <a href="/posts/20200329-how-to-prevent-zoombombing/"><img src="/img/zoom-logo.png" class="attachment-post-thumbnail" alt=""/></a>
+     </div>
+     <p class="postwidgettitle" style="font-weight:700;">
+       <a href="/posts/20200329-how-to-prevent-zoombombing/">How to prevent "zoombombing"</a>
+     </p>
+     <p class="postwidgetinfo">
+       March 29, 2020
+     </p>
+   </div>
+   
+  
+   
+   <div class="PostWrap">
+     <div style="width:72px;float:left; margin-right:10px;">
+       <a href="/posts/20200322-come-along-with-me/"><img src="/img/come-along-with-me-thumb.png" class="attachment-post-thumbnail" alt=""/></a>
+     </div>
+     <p class="postwidgettitle" style="font-weight:700;">
+       <a href="/posts/20200322-come-along-with-me/">Come along with me - A backyard beehive tour</a>
+     </p>
+     <p class="postwidgetinfo">
+       March 22, 2020
+     </p>
+   </div>
+   
+  
+   
+   <div class="PostWrap">
+     <div style="width:72px;float:left; margin-right:10px;">
+       <a href="/posts/20200318-tips-for-virtual-classes/"><img src="/img/virtual-class-thumb.jpg" class="attachment-post-thumbnail" alt=""/></a>
+     </div>
+     <p class="postwidgettitle" style="font-weight:700;">
+       <a href="/posts/20200318-tips-for-virtual-classes/">Tips for teachers leading virtual classes (with Zoom)</a>
+     </p>
+     <p class="postwidgetinfo">
+       March 18, 2020
+     </p>
+   </div>
+   
+  
+   
+   <div class="PostWrap">
+     <div style="width:72px;float:left; margin-right:10px;">
+       <a href="/posts/20160305-cognitive-realtime-iot/"><img src="/img/cognitive-realtime-iot.png" class="attachment-post-thumbnail" alt=""/></a>
+     </div>
+     <p class="postwidgettitle" style="font-weight:700;">
+       <a href="/posts/20160305-cognitive-realtime-iot/">Cognitive Real-Time IoT</a>
+     </p>
+     <p class="postwidgetinfo">
+       Mar 5, 2016
+     </p>
+   </div>
+   
+  
+   
+   <div class="PostWrap">
+     <div style="width:72px;float:left; margin-right:10px;">
+       <a href="/posts/20160210-saturn-photo/"><img src="/img/saturn-thumb.jpg" class="attachment-post-thumbnail" alt=""/></a>
+     </div>
+     <p class="postwidgettitle" style="font-weight:700;">
+       <a href="/posts/20160210-saturn-photo/">The Day the Earth Smiled</a>
+     </p>
+     <p class="postwidgetinfo">
+       Feb 10, 2016
+     </p>
+   </div>
+   
+  
+   
+   <div class="PostWrap">
+     <div style="width:72px;float:left; margin-right:10px;">
+       <a href="/posts/20160209-websocket-book/"><img src="/img/websocketbook.png" class="attachment-post-thumbnail" alt=""/></a>
+     </div>
+     <p class="postwidgettitle" style="font-weight:700;">
+       <a href="/posts/20160209-websocket-book/">The Definitive Guide to HTML5 WebSocket</a>
+     </p>
+     <p class="postwidgetinfo">
+       Feb 9, 2016
+     </p>
+   </div>
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+
+
+  <div style="clear:both;"></div>
+</aside>
+
+      <!-- { % include site/recent-comments.html % } -->
+      <!-- { % include site/archives.html % } -->
+      <!-- { % include site/categories.html % } -->
+    </aside>
+  </div>
+</div>
+<!-- END SIDEBAR -->
+
+</div>
+</div>
+</section>
+<!-- END CONTENT
+================================================== -->
+
+
+  <!-- BEGIN FOOTER
+================================================== -->
+<section class="nowidgetbottom">
+	<p id="back-top">
+		<a href="#top">
+			<span><i class="fa fa-chevron-up"></i></span>
+		</a>
+	</p>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12 text-center">
+				<a href="index.html">
+					<div>
+						<img class="footer-logo" src="/img/logo.png" width="250" alt="" />
+					</div>
+				</a>
+				<br/>
+				<ul class="social-icons" style="margin-top:7px;margin-bottom:5px;">
+
+					<li><a href="http://twitter.com/pmoskovi"><i class="fa fa-twitter"></i></a></li>
+					<li><a href="https://www.linkedin.com/in/petermoskovits"><i class="fa fa-linkedin"></i></a></li>
+				</ul>
+				Copyright | All Rights Reserved.
+			</div>
+		</div>
+	</div>
+</section>
+<!-- END FOOTER
+================================================== -->
+
+<script src='/js/bootstrap.js'></script>
+<script src='/js/easing.js'></script>
+<!-- <script src='js/smoothscroll.js'></script> -->
+<script src='/js/wow.js'></script>
+<script src='/js/appear.js'></script>
+<script src='/js/fitvids.js'></script>
+<script src='/js/common.js'></script>
+<script src='/js/flexslider.js'></script>
+<script src='/js/countto.js'></script>
+<script src='/js/jquery.cycle.all.min.js'></script>
+<script src='/js/carousel.js'></script>
+<script src='/js/carousel-anything.js'></script>
+<script src='/js/carousel-testimonials.js'></script>
+<script src='/js/isotope.js'></script>
+<script src='/js/carousel-blog.js'></script>
+<script src='/js/parallax.js'></script>
+<script src='/js/validate.js'></script>
+<script src='/js/prettify.js'></script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	if (window.location.hostname.includes('petermoskovits.com')) {
+		ga('create', 'UA-73606022-1', 'auto');
+		ga('send', 'pageview');
+	}
+</script>
+
+</body>
+
+</html>
+
+</body>
+</html>
